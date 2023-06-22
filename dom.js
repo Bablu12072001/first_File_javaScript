@@ -73,14 +73,80 @@
 
 // querySelectorAll
 
-var titles = document.querySelectorAll(".title");
+// var titles = document.querySelectorAll(".title");
 
-console.log(titles);
-titles[0].textContent = "Hello";
-var odd = document.querySelectorAll(".li:nth-child(odd)");
-var even = document.querySelectorAll(".li:nth-child(even)");
+// console.log(titles);
+// titles[0].textContent = "Hello";
+// var odd = document.querySelectorAll(".li:nth-child(odd)");
+// var even = document.querySelectorAll(".li:nth-child(even)");
 
-for (var i = 0; i < odd.length; i++) {
-  odd[i].style.backgroundColor = "#f4f4f4";
-  even[i].style.backgroundColor = "##ccc";
-}
+// for (var i = 0; i < odd.length; i++) {
+//   odd[i].style.backgroundColor = "#f4f4f4";
+//   even[i].style.backgroundColor = "##ccc";
+// }
+
+// TRAVERSING THE DOM
+
+//Parent Node
+// var itemList = document.querySelector("#items");
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = "#f4f4f4";
+// console.log(itemList.parentNode.parentNode.parentNode);
+
+//Parent Element
+var itemList = document.querySelector("#items");
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = "red";
+// console.log(itemList.parentElement.parentElement.parentElement);
+
+// ChildNode
+// console.log(itemList.childNodes);
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundColor = "yellow";
+
+// FirstChild
+
+// console.log(itemList.firstChild);
+
+// FirstElementChild
+
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = "Hello 1";
+
+// NextSibling
+
+// console.log(itemList.nextSibling);
+
+// NextSiblingElement
+
+// console.log(itemList.nextElementSibling);
+
+// previousSibling
+
+// console.log(itemList.previousSibling);
+
+// previousSiblingElement
+
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color = "green";
+
+// create a div
+var newDiv = document.createElement("div");
+// Add class
+newDiv.className = "hello";
+// Add id
+newDiv.id = "hello1";
+// add attr
+newDiv.setAttribute("title", "hello Div");
+
+// create text node
+var newDivText = document.createTextNode("hello world");
+
+// add text to div
+newDiv.appendChild(newDivText);
+var container = document.querySelector("header .container");
+var h1 = document.querySelector("header h1");
+console.log(newDiv);
+newDiv.style.fontSize = "36px";
+container.insertBefore(newDiv, h1);
